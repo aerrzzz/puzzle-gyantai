@@ -1,0 +1,88 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: #37424b;
+    background: linear-gradient(135deg, #e4fcfc, #575050); /* Latar belakang gradien yang lembut */
+    margin: 0; /* Menghapus margin default */
+    padding: 20px; /* Menambahkan padding */
+}
+
+#title {
+    height: 150px;
+    width: 400px;
+    margin: 20px auto;
+    font-size: 2.5em; /* Ukuran font lebih besar */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Efek bayangan yang lebih dalam */
+    animation: pulse 2s infinite; /* Animasi judul */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+#board {
+    width: 360px;
+    height: 360px;
+    background-color: #ffffff; /* Warna papan putih untuk kontras */
+    border: 10px solid #37424b;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Bayangan halus di sekitar board */
+    border-radius: 15px; /* Sudut yang lebih melengkung */
+    overflow: hidden; /* Menghindari gambar keluar dari papan */
+}
+
+#board img {
+    width: 118px;
+    height: 118px;
+    border: 1px solid #37424b;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk efek hover */
+    cursor: pointer; /* Menunjukkan bahwa gambar dapat diklik */
+    background: rgba(255, 255, 255, 0.8); /* Efek latar belakang semi-transparan */
+    filter: brightness(90%); /* Efek kecerahan */
+}
+
+/* Efek hover untuk gambar */
+#board img:hover {
+    transform: scale(1.1); /* Membesarkan gambar saat hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Bayangan saat hover */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transisi halus */
+}
+
+/* Efek ketika gambar sedang di-drag */
+.dragging {
+    opacity: 0.8; /* Transparansi saat di-drag */
+    transform: scale(1.1); /* Sedikit membesarkan gambar saat di-drag */
+}
+
+/* Animasi swap */
+.animate-swap {
+    animation: bounce 0.5s ease; /* Efek bouncing saat swap */
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Penataan untuk elemen tambahan (opsional) */
+#turns {
+    font-size: 1.5em; /* Ukuran font lebih besar untuk menampilkan jumlah giliran */
+    margin-top: 20px; /* Jarak dari papan */
+    color: #37424b; /* Warna untuk teks */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Bayangan teks */
+}
+
